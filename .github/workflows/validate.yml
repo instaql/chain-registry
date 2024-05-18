@@ -4,7 +4,7 @@ on: [workflow_dispatch]
 name: Validate ✅
 
 jobs:
-  generate-types:
+  validate-schema:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository 📥
@@ -14,7 +14,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
-          cache: 'yarn'
 
       - name: Install @chain-registry/cli
         run: |
