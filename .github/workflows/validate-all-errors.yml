@@ -4,10 +4,10 @@ on:
     types: [opened, synchronize, reopened]
   workflow_dispatch:
 
-name: Validate ✅
+name: Validate All Errors ✅ 🔍
 
 jobs:
-  validate-schema:
+  validate-schema-all-errors:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository 📥
@@ -22,6 +22,6 @@ jobs:
         run: |
           npm install -g @chain-registry/cli@1.43.0
 
-      - name: Validate ✓
+      - name: Validate All Errors ✓
         run: |
-          chain-registry validate --registryDir .
+          chain-registry validate --registryDir . --allErrors
