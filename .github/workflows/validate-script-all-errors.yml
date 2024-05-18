@@ -22,6 +22,6 @@ jobs:
         run: |
           npm install -g @chain-registry/cli@1.42.0
 
-      - name: Validate ✓
+      - name: Validate Strict All Errors ✓
         run: |
           chain-registry validate --registryDir . --useStrict --allErrors
