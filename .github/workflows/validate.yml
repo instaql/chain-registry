@@ -18,10 +18,10 @@ jobs:
         with:
           node-version: '20.x'
 
-      - name: Install @chain-registry/cli
+      - name: Install @chain-registry/cli 📜
         run: |
           npm install -g @chain-registry/cli
 
-      - name: Validate
+      - name: Validate ✓
         run: |
-          chain-registry validate          
+          chain-registry validate --registryDir .
