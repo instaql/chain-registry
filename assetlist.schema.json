@@ -62,7 +62,7 @@
           "description": "[OPTIONAL] The potential options for type of asset. By default, assumes sdk.coin"
         },
         "address": {
-          "type": "string",
+          "type": ["string", "null"],
           "description": "[OPTIONAL] The address of the asset. Only required for type_asset: cw20, snip20",
           "conditionalRequired": {
             "if": {
