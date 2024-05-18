@@ -1,0 +1,25 @@
+# on: [pull_request, workflow_dispatch]
+on: [workflow_dispatch]
+
+name: Validate ✅
+
+jobs:
+  generate-types:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository 📥
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 🌐
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'yarn'
+
+      - name: Install @chain-registry/cli
+        run: |
+          npm install -g @chain-registry/cli
+
+      - name: Validate
+        run: |
+          chain-registry validate          
