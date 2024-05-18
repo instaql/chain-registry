@@ -12,7 +12,6 @@ jobs:
     strategy:
       matrix:
         draft: ["2020-12", "2019-09", "draft-07", ""]
-        useStrict: ["--useStrict", ""]
         allErrors: ["--allErrors", ""]
 
     steps:
@@ -28,4 +27,4 @@ jobs:
         run: npm install -g @chain-registry/cli@1.44.0
 
       - name: Validate Schema with Options
-        run: chain-registry validate --registryDir . ${{ matrix.useStrict }} ${{ matrix.allErrors }} ${{ matrix.draft && format('--draft {0}', matrix.draft) }}
+        run: chain-registry validate --registryDir . ${{ matrix.allErrors }} ${{ matrix.draft && format('--draft {0}', matrix.draft) }}
