@@ -1,0 +1,31 @@
+name: Validate All Drafts ✅ 🔍
+
+on:
+  push:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+jobs:
+  validate-schema:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        draft: ["2020-12", "2019-09", "draft-07", ""]
+        useStrict: ["--useStrict", ""]
+        allErrors: ["--allErrors", ""]
+
+    steps:
+      - name: Checkout Repository 📥
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 🌐
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Install @chain-registry/cli 📜
+        run: npm install -g @chain-registry/cli@1.44.0
+
+      - name: Validate Schema with Options
+        run: chain-registry validate --registryDir . ${{ matrix.useStrict }} ${{ matrix.allErrors }} ${{ matrix.draft && format('--draft {0}', matrix.draft) }}
