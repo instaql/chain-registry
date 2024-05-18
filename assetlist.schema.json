@@ -216,26 +216,7 @@
           }
         }
       },
-      "additionalProperties": false,
-      "if": {
-        "required": [
-          "type_asset"
-        ],
-        "properties": {
-          "type_asset": {
-            "enum": [
-              "erc20",
-              "cw20",
-              "snip20"
-            ]
-          }
-        }
-      },
-      "then": {
-        "required": [
-          "address"
-        ]
-      }
+      "additionalProperties": false
     },
     "denom_unit": {
       "type": "object",
