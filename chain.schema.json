@@ -15,7 +15,7 @@
       "pattern": "[a-z0-9]+"
     },
     "chain_id": {
-      "type": "string"
+      "type": "string",
     },
     "pre_fork_chain_name": {
       "type": "string",
