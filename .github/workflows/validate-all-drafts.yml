@@ -24,7 +24,7 @@ jobs:
           node-version: '20.x'
 
       - name: Install @chain-registry/cli 📜
-        run: npm install -g @chain-registry/cli@1.44.0
+        run: npm install -g @chain-registry/cli@1.45.0
 
       - name: Validate Schema with Options
         run: chain-registry validate --registryDir . ${{ matrix.allErrors }} ${{ matrix.draft && format('--draft {0}', matrix.draft) }}

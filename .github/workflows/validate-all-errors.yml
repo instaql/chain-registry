@@ -20,7 +20,7 @@ jobs:
 
       - name: Install @chain-registry/cli 📜
         run: |
-          npm install -g @chain-registry/cli@1.44.0
+          npm install -g @chain-registry/cli@1.45.0
 
       - name: Validate All Errors ✓
         run: |
